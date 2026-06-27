@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom font utility classes */
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CHEMLAB LIGHT & BRIGHT THEME STYLESHEET OVERRIDES (ONLY ACTIVE IN LIGHT MODE)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+:root:not(.dark) {
+  /* 1. Reset Global Page Background and Default Text Color */
+  &, & body, & #root, & #app-container {
+    background-color: #F4F7FF !important;
+    color: #0D1B4B !important;
+    font-family: "Inter", sans-serif !important;
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Remove absolute ambient dark background styling gradients */
+  .absolute.inset-x-0.top-0.h-96.bg-gradient-to-b {
+    background: none !important;
+    display: none !important;
+  }
+
+  /* 2. Overarching Header & Navigation Sidebar Panels */
+  #master-header, 
+  header, 
+  .bg-slate-950\/80 {
+    background-color: #EEF2FF !important;
+    border-bottom: 1px solid #DCE4FF !important;
+  }
+
+  /* Cockpit AI sidebar background */
+  #cockpit-ai-panel,
+  aside {
+    background-color: #EEF2FF !important;
+    border-left: 1px solid #DCE4FF !important;
+    box-shadow: 2px 0 12px rgba(13, 27, 75, 0.06) !important;
+  }
+
+  /* 3. Cards & Container Panels styling */
+  .bg-slate-900,
+  .bg-slate-900\/60,
+  .bg-slate-900\/80,
+  .bg-slate-900\/90,
+  .bg-slate-950,
+  .bg-slate-950\/30,
+  .bg-slate-950\/50,
+  .bg-slate-950\/60,
+  .bg-slate-950\/70,
+  .bg-slate-950\/80,
+  .bg-slate-950\/90,
+  .bg-indigo-950\/20,
+  #dashboard-main-view,
+  #quick-badge-shelf,
+  #module-activity-feed,
+  #quiz-main-container,
+  #react-simulation-root,
+  #states-simulation-panel,
+  #acids-bases-simulation-panel,
+  #organic-chem-panel {
+    background-color: #FFFFFF !important;
+    border-color: #DCE4FF !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    box-shadow: 0 2px 12px rgba(91, 33, 250, 0.08) !important;
+    border-radius: 0.75rem !important;
+  }
+
+  /* Card hover scaling and expansion shadow */
+  .bg-slate-900:hover,
+  #quiz-main-container:hover {
+    box-shadow: 0 6px 24px rgba(91, 33, 250, 0.14) !important;
+  }
+
+  /* General dividers */
+  .border,
+  .border-t,
+  .border-b,
+  .border-l,
+  .border-r,
+  .border-violet-950,
+  .border-violet-950\/40,
+  .border-violet-950\/30,
+  .border-violet-950\/20,
+  .border-violet-900\/30,
+  .border-violet-800\/20,
+  .border-violet-800\/40 {
+    border-color: #E2E8F7 !important;
+  }
+
+  /* 4. Canvas Visualizer & Simulator Panels */
+  #bohr-simulation-panel,
+  #three-atom-container,
+  #three-canvas-container,
+  .relative.w-full.h-\[400px\],
+  .relative.w-full.h-\[240px\] {
+    background-color: #F0F4FF !important;
+    border: 1px solid #DCE4FF !important;
+    box-shadow: inset 0 2px 4px rgba(13, 27, 75, 0.02) !important;
+  }
+
+  /* 5. Typography Hierarchy Sizing Specifications */
+  h1, .h1-title {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: #0A1540 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+  }
+
+  h2, .h2-title {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #0A1540 !important;
+  }
+
+  h3, h4, .h3-title {
+    font-size: 19px !important;
+    font-weight: 600 !important;
+    color: #0A1540 !important;
+  }
+
+  p, .body-copy {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+    color: #3D5080 !important;
+  }
+
+  /* Legends & Labels upper-case format */
+  .legend-label,
+  [class*="text-[10px]"],
+  [class*="text-[9px]"],
+  .text-zinc-500.font-mono {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #7A8DB0 !important;
+  }
+
+  /* Action Trigger Buttons spacing */
+  button, .btn {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+  }
+
+  /* 6. Button Colors and Interactive Accents */
+  button.bg-violet-600,
+  button[class*="bg-violet-600"],
+  #submit-answer-btn,
+  #header-chat-btn,
+  #expand-chat-btn,
+  .bg-violet-600 {
+    background-color: #5B21FA !important;
+    color: #FFFFFF !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 2px 8px rgba(91, 33, 250, 0.25) !important;
+    transition: all 0.2s ease-in-out !important;
+  }
+
+  button.bg-violet-600:hover,
+  button[class*="bg-violet-600"]:hover,
+  #submit-answer-btn:hover,
+  #header-chat-btn:hover,
+  #expand-chat-btn:hover {
+    background-color: #4C10E8 !important;
+  }
+
+  /* Outline Secondary buttons */
+  button[class*="border-violet-950"],
+  button[class*="bg-slate-950\/40"] {
+    background-color: #EEF2FF !important;
+    color: #5B21FA !important;
+    border: 1px solid #5B21FA !important;
+  }
+  button[class*="border-violet-950"]:hover,
+  button[class*="bg-slate-950\/40"]:hover {
+    background-color: #E8EDFF !important;
+  }
+
+  /* Clean highlight for tab indices in tabs strips and settings */
+  #modules-tab-strip button[class*="text-violet-400"],
+  #modules-tab-strip button[class*="bg-violet-600/10"] {
+    background-color: #FFFFFF !important;
+    border-bottom: 2px solid #5B21FA !important;
+  }
+
+  #modules-tab-strip button {
+    transition: all 0.2s ease-in-out !important;
+  }
+
+  #modules-tab-strip button:hover {
+    background-color: #E8EDFF !important;
+  }
+
+  /* Specific inner button typography classes to increase font size */
+  #modules-tab-strip button div {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: #3D5080 !important;
+  }
+
+  #modules-tab-strip button span {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #5B21FA !important;
+    opacity: 0.95 !important;
+  }
+
+  /* Ensure the active states display precise text contrast colors */
+  #modules-tab-strip button[class*="bg-violet-600/10"] div {
+    color: #5B21FA !important;
+  }
+
+  #modules-tab-strip button[class*="bg-violet-600/10"] span {
+    color: #5B21FA !important;
+  }
+
+  #modules-tab-strip button:hover div {
+    color: #5B21FA !important;
+  }
+
+  #modules-tab-strip button:hover span {
+    color: #5B21FA !important;
+  }
+
+  /* Notebook tab sizing and hover contrast */
+  #modules-tab-strip #mod-tab-btn-dashboard {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    border: 1px solid #DCE4FF !important;
+  }
+
+  #modules-tab-strip #mod-tab-btn-dashboard span {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+  }
+
+  #modules-tab-strip #mod-tab-btn-dashboard[class*="bg-teal-500/10"] span {
+    color: #00BFA6 !important;
+  }
+
+  /* 7. Quiz Panel Visual Elements & Inputs */
+  #quiz-question-view p {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #0D1B4B !important;
+  }
+
+  #quiz-question-view button[id^="opt-btn-"],
+  #quiz-question-view button[id^="tf-btn-"],
+  #quiz-question-view button[id^="word-bank-btn-"],
+  #quiz-question-view button[id^="match-"] {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: #3D5080 !important;
+    background-color: #F0F4FF !important;
+    border-color: #B8C5E8 !important;
+  }
+
+  #quiz-question-view button[id^="opt-btn-"]:hover,
+  #quiz-question-view button[id^="tf-btn-"]:hover {
+    background-color: #E8EDFF !important;
+    border-color: #5B21FA !important;
+  }
+
+  /* Active progress dot helper in assessment */
+  span[id^="quiz-progress-bar-"] {
+    height: 8px !important;
+    border-radius: 9999px !important;
+  }
+
+  /* Quiz grading correct / incorrect verdict flashcard states */
+  #quiz-verdict-hud {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+  }
+
+  #quiz-verdict-hud[class*="bg-teal-500"] {
+    background-color: #DCFCE7 !important;
+    border-color: #DCFCE7 !important;
+  }
+  #quiz-verdict-hud[class*="bg-teal-500"] h4,
+  #quiz-verdict-hud[class*="bg-teal-500"] p,
+  #quiz-verdict-hud[class*="bg-teal-500"] span {
+    color: #166534 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+  }
+
+  #quiz-verdict-hud[class*="bg-red-500"] {
+    background-color: #FEE2E2 !important;
+    border-color: #FEE2E2 !important;
+  }
+  #quiz-verdict-hud[class*="bg-red-500"] h4,
+  #quiz-verdict-hud[class*="bg-red-500"] p,
+  #quiz-verdict-hud[class*="bg-red-500"] span {
+    color: #991B1B !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+  }
+
+  /* 8. ChemAI Assistant Chat Overrides */
+  #cockpit-ai-panel input,
+  #cockpit-ai-panel textarea {
+    font-size: 16px !important;
+    color: #0D1B4B !important;
+    background-color: #F0F4FF !important;
+    border: 1px solid #B8C5E8 !important;
+  }
+
+  #cockpit-ai-panel .chat-bubble,
+  #cockpit-ai-panel p,
+  #cockpit-ai-panel span,
+  #cockpit-ai-panel .markdown-body {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    color: #0D1B4B !important;
+  }
+
+  /* 9. Element Scorecard overlay & metrics indicators */
+  #element-expanded-scorecard {
+    background-color: #FFFFFF !important;
+    border: 1px solid #DCE4FF !important;
+  }
+  #element-expanded-scorecard h4,
+  #element-expanded-scorecard [class*="text-2xl"],
+  #element-expanded-scorecard [class*="text-3xl"],
+  #element-expanded-scorecard .scorecard-val,
+  #element-expanded-scorecard span.font-bold {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #0D1B4B !important;
+  }
+  #element-expanded-scorecard .scorecard-lbl,
+  #element-expanded-scorecard span[class*="text-[10px]"] {
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    font-weight: 600 !important;
+    color: #7A8DB0 !important;
+  }
+
+  /* XP level indicator */
+  #level-progress-meter {
+    background-color: #E2E8F7 !important;
+    border: 1px solid #CBD5F0 !important;
+  }
+  #level-progress-meter > div {
+    background: linear-gradient(to right, #5B21FA, #00BFA6) !important;
+  }
+
+  /* Fun Fact purple helper element box */
+  #element-fun-fact, .fun-fact-box {
+    background-color: #EDE9FE !important;
+    border: 1px solid #DCE4FF !important;
+  }
+  #element-fun-fact p, 
+  #element-fun-fact span,
+  .fun-fact-box p,
+  .fun-fact-box span {
+    color: #4C1D95 !important;
+    background-color: transparent !important;
+  }
+
+  /* 10. Complete Removal of glow/neon/blur effects */
+  * {
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* 11. Specific light theme text contrast utility overrides */
+  .text-zinc-400,
+  .text-slate-400,
+  .text-indigo-400,
+  .text-zinc-300,
+  .text-slate-300,
+  .text-[#a1a1aa],
+  .text-gray-400 {
+    color: #3D5080 !important;
+  }
+
+  .text-white,
+  .text-slate-205,
+  .text-slate-100,
+  .text-zinc-100,
+  .text-[#ffffff] {
+    color: #0D1B4B !important;
+  }
+
+  .text-zinc-500,
+  .text-slate-500,
+  .text-gray-500 {
+    color: #7A8DB0 !important;
+  }
+
+  .text-teal-400,
+  .text-emerald-400 {
+    color: #00BFA6 !important;
+  }
+
+  .text-violet-400,
+  .text-indigo-400 {
+    color: #5B21FA !important;
+  }
+
+  .bg-slate-950 {
+    background-color: #F0F4FF !important;
+  }
+
+  /* Ensure selected/active button states maintain white text */
+  button.bg-violet-600 *,
+  button.bg-violet-600,
+  #submit-answer-btn,
+  #submit-answer-btn *,
+  .bg-violet-600,
+  .bg-violet-600 * {
+    color: #FFFFFF !important;
+  }
+}
+
+/* ⚛️ Force Black Text Color specifically for Focus Study Timer in Light Mode, and White in Dark Mode */
+:root:not(.dark) #focus-mod-1-container .focus-label,
+:root:not(.dark) #focus-mod-1-container .focus-value,
+:root:not(.dark) #focus-mod-container .focus-label,
+:root:not(.dark) #focus-mod-container .focus-value {
+  color: #000000 !important;
+}
+
+:root.dark #focus-mod-1-container .focus-label,
+:root.dark #focus-mod-1-container .focus-value,
+:root.dark #focus-mod-container .focus-label,
+:root.dark #focus-mod-container .focus-value {
+  color: #ffffff !important;
+}
+
+/* ⚛️ Force Black Text Color specifically for Module 1 Clickable Electron Shells Container & sub-labels */
+#clickable-electron-shells-container,
+#clickable-electron-shells-container *,
+#clickable-electron-shells-container span,
+#clickable-electron-shells-container div,
+#clickable-electron-shells-container button {
+  color: #000000 !important;
+}
+
+/* 📓 Lab Journal Text, Tabs, and Placeholders Overrides for light and dark modes */
+
+/* Lab Journal Textarea styling overrides */
+:root:not(.dark) textarea[id^="note-editor-input-"] {
+  color: #0F172A !important; /* Rich Charcoal/Black for maximal contrast in light mode */
+  background-color: #FFFFFF !important;
+  border: 1px solid #CBD5E1 !important;
+}
+
+:root:not(.dark) textarea[id^="note-editor-input-"]::placeholder {
+  color: #475569 !important; /* Highly readable Slate placeholder in light mode */
+  opacity: 0.85 !important;
+}
+
+:root.dark textarea[id^="note-editor-input-"] {
+  color: #F4F4F5 !important;
+  background-color: rgba(2, 6, 23, 0.7) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+}
+
+:root.dark textarea[id^="note-editor-input-"]::placeholder {
+  color: #71717A !important;
+  opacity: 0.85 !important;
+}
+
+/* Inactive Lab Journal Tabs in Light Mode */
+:root:not(.dark) button[id^="notes-tab-trigger-"]:not([class*="border-violet-500"]) {
+  background-color: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #334155 !important;
+}
+:root:not(.dark) button[id^="notes-tab-trigger-"]:not([class*="border-violet-500"]) span {
+  color: #334155 !important;
+}
+:root:not(.dark) button[id^="notes-tab-trigger-"]:not([class*="border-violet-500"]):hover {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+:root:not(.dark) button[id^="notes-tab-trigger-"]:not([class*="border-violet-500"]):hover span {
+  color: #0F172A !important;
+}
+
+/* Active Lab Journal Tab in Light Mode */
+:root:not(.dark) button[id^="notes-tab-trigger-"][class*="border-violet-500"] {
+  background-color: rgba(91, 33, 250, 0.1) !important;
+  border: 1px solid #5B21FA !important;
+  color: #5B21FA !important;
+}
+:root:not(.dark) button[id^="notes-tab-trigger-"][class*="border-violet-500"] span {
+  color: #5B21FA !important;
+}
+
+
+
+
